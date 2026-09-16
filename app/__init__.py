@@ -1,1 +1,1 @@
-from .knight import Knight # noqa: F401
+from .knight import Knight  # noqa: F401
