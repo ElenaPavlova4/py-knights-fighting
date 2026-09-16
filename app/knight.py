@@ -1,5 +1,13 @@
 class Knight:
-    def __init__(self, name, power, hp, armour, weapon, potion):
+    def __init__(
+        self,
+        name: str,
+        power: int,
+        hp: int,
+        armour: list,
+        weapon: dict,
+        potion: dict | None,
+    ) -> None:
         self.name = name
         self.hp = hp
         self.power = power
@@ -9,13 +17,13 @@ class Knight:
         self._apply_weapon(weapon)
         self._apply_potion(potion)
 
-    def _apply_armour(self, armour):
+    def _apply_armour(self, armour: list) -> None:
         self.protection = sum(piece["protection"] for piece in armour)
 
-    def _apply_weapon(self, weapon):
+    def _apply_weapon(self, weapon: dict) -> None:
         self.power += weapon["power"]
 
-    def _apply_potion(self, potion):
+    def _apply_potion(self, potion: dict | None) -> None:
         if potion is None:
             return
 
